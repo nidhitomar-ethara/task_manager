@@ -45,8 +45,8 @@ Create a `server/.env` file:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/team-task-manager
-JWT_SECRET=your_jwt_secret_key_here
+MONGO_URI=mongodb+srv://nidhitomar_db_user:<db_password>@cluster0.oltte9e.mongodb.net/?appName=Cluster0
+JWT_SECRET=7d2f9b8c5e1a4d6b3f0a9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f
 JWT_EXPIRE=7d
 NODE_ENV=development
 ```
@@ -54,11 +54,13 @@ NODE_ENV=development
 ## 📁 Project Structure
 
 ```
+
 team-task-manager/
 ├── client/          # React frontend (Vite)
 ├── server/          # Express backend
 ├── package.json     # Root scripts
 └── README.md
+
 ```
 
 ## 🚀 Deployment Guide
@@ -73,6 +75,9 @@ Follow these steps to get your project live on **Railway**.
 5.  Go to **Clusters** -> **Connect** -> **Connect your application**.
 6.  Copy the **Connection String** (SRV). It looks like `mongodb+srv://<username>:<password>@cluster0.xxxx.mongodb.net/team-task-manager`.
 
+
+mongodb+srv://nidhitomar_db_user:<db_password>@cluster0.oltte9e.mongodb.net/?appName=Cluster0
+
 ### 2. Prepare the Code
 1.  Open `server/.env` and replace `MONGO_URI` with your connection string (replace `<password>` with your actual password).
 2.  Ensure `NODE_ENV` is set to `production` for the final deployment.
@@ -85,7 +90,7 @@ Follow these steps to get your project live on **Railway**.
     git add .
     git commit -m "Initial commit"
     git branch -M main
-    git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+    git remote add origin https://github.com/nidhitomar-ethara/task_manager.git
     git push -u origin main
     ```
 
