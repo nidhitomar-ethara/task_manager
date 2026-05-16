@@ -28,9 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 // CORS
 app.use(
   cors({
-    origin: process.env.NODE_ENV === 'production'
-      ? true  // Allow same-origin in production
-      : ['http://localhost:5173', 'http://localhost:5174'], // Vite dev servers
+    origin: true, // Allow all origins in production for simplicity
     credentials: true,
   })
 );
