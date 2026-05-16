@@ -6,8 +6,15 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
 
+const dns = require('dns');
+
 // Load env vars
 dotenv.config();
+
+// Fix for Node 18+ SRV lookup issues
+if (dns.setDefaultResultOrder) {
+  dns.setDefaultResultOrder('ipv4first');
+}
 
 // Connect to database
 connectDB();
@@ -23,7 +30,7 @@ app.use(
   cors({
     origin: process.env.NODE_ENV === 'production'
       ? true  // Allow same-origin in production
-      : 'http://localhost:5173', // Vite dev server
+      : ['http://localhost:5173', 'http://localhost:5174'], // Vite dev servers
     credentials: true,
   })
 );

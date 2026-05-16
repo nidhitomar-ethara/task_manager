@@ -10,9 +10,16 @@
     "build": "npm run install-all && cd client && npm run build",
     "start": "cd server && npm start"
   },
-  "keywords": ["task-manager", "team", "project-management"],
+  "keywords": [
+    "task-manager",
+    "team",
+    "project-management"
+  ],
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "mongodb": "3.7"
   }
 }
