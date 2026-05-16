@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 // CORS
 app.use(
   cors({
-    origin: true, // Allow all origins in production for simplicity
+    origin: (origin, callback) => callback(null, true), // Allow all origins with credentials
     credentials: true,
   })
 );
